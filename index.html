@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Store</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="logo">E-Shop</div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#products">Products</a>
+           <a href="#about">About</a>
+<a href="#contact">Contact</a> 
+            
+        </nav>
+
+        <button  onclick="showCart()">
+    🛒 Cart <span id="cart-count">0</span>
+</button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to E-Shop</h1>
+        <p>Find your favorite products at affordable prices.</p>
+        <button onclick="scrollToProducts()">Shop Now</button>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <h2>Our Products</h2>
+
+        <div class="product-container">
+
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">👕</div>
+                <h3>Classic T-Shirt</h3>
+                <p>Comfortable cotton T-shirt.</p>
+                <h4>Rs. 1,500</h4>
+              <button onclick="addToCart('Classic T-Shirt', 1500)">Add to Cart</button>
+            <button onclick="window.location.href='product.html'">
+    View Details
+</button>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">👟</div>
+                <h3>Running Shoes</h3>
+                <p>Comfortable shoes for everyday use.</p>
+                <h4>Rs. 3,500</h4>
+                <button onclick="addToCart('Running Shoes', 3500)">Add to Cart</button>
+        <button onclick="window.location.href='product.html'">
+    View Details
+</button>
+                </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">🎧</div>
+                <h3>Wireless Headphones</h3>
+                <p>Enjoy high-quality wireless sound.</p>
+                <h4>Rs. 2,500</h4>
+                <button onclick="addToCart('Wireless Headphones', 2500)">Add to Cart</button>
+            <button onclick="window.location.href='product.html'">
+    View Details
+</button>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-image">⌚</div>
+                <h3>Smart Watch</h3>
+                <p>Smart watch with useful features.</p>
+                <h4>Rs. 4,000</h4>
+                <button onclick="addToCart('Smart Watch', 4000)">Add to Cart</button>
+            <button onclick="window.location.href='product.html'">
+    View Details
+</button>
+            </div>
+
+        </div>
+    </section>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>Welcome to E-Shop. We provide quality products at affordable prices.</p>
+    <p>Our goal is to make online shopping easy, simple, and convenient.</p>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: eshop@example.com</p>
+    <p>Phone: +92 300 1234567</p>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 E-Shop. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,114 +1,414 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>E-Commerce Store</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .product-card img {
+            width: 100%;
+            max-width: 180px;
+            height: 180px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .product-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .product-buttons button {
+            flex: 1;
+            padding: 10px;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 900px) {
+            .product-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+
+            .product-buttons {
+                gap: 8px;
+            }
+
+            .product-buttons button {
+                font-size: 13px;
+                padding: 10px 5px;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
 
     <!-- Navbar -->
+
     <header>
-        <div class="logo">E-Shop</div>
+
+        <div class="logo">
+            E-Shop
+        </div>
 
         <nav>
             <a href="#">Home</a>
             <a href="#products">Products</a>
-           <a href="#about">About</a>
-<a href="#contact">Contact</a> 
-            
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
         </nav>
 
-        <button  onclick="showCart()">
-    🛒 Cart <span id="cart-count">0</span>
-</button>
+        <button onclick="showCart()">
+            🛒 Cart <span id="cart-count">0</span>
+        </button>
+
     </header>
 
+
     <!-- Hero Section -->
+
     <section class="hero">
-        <h1>Welcome to E-Shop</h1>
-        <p>Find your favorite products at affordable prices.</p>
-        <button onclick="scrollToProducts()">Shop Now</button>
+
+        <h1>
+            Welcome to E-Shop
+        </h1>
+
+        <p>
+            Find your favorite products at affordable prices.
+        </p>
+
+        <button onclick="scrollToProducts()">
+            Shop Now
+        </button>
+
     </section>
 
+
     <!-- Products Section -->
+
     <section id="products">
-        <h2>Our Products</h2>
+
+        <h2>
+            Our Products
+        </h2>
 
         <div class="product-container">
 
-            <!-- Product 1 -->
-            <div class="product-card">
-                <div class="product-image">👕</div>
-                <h3>Classic T-Shirt</h3>
-                <p>Comfortable cotton T-shirt.</p>
-                <h4>Rs. 1,500</h4>
-              <button onclick="addToCart('Classic T-Shirt', 1500)">Add to Cart</button>
-            <button onclick="window.location.href='product.html'">
-    View Details
-</button>
-            </div>
 
-            <!-- Product 2 -->
+            <!-- Product 1 -->
+
             <div class="product-card">
-                <div class="product-image">👟</div>
-                <h3>Running Shoes</h3>
-                <p>Comfortable shoes for everyday use.</p>
-                <h4>Rs. 3,500</h4>
-                <button onclick="addToCart('Running Shoes', 3500)">Add to Cart</button>
-        <button onclick="window.location.href='product.html'">
-    View Details
-</button>
+
+                <img
+                    src="images/hair-straightener.png"
+                    alt="Hair Straightener"
+                >
+
+                <h3>
+                    Hair Straightener
+                </h3>
+
+                <p>
+                    Fast and easy hair straightener with a stylish
+                    design. Perfect for smooth and straight hair.
+                </p>
+
+                <h4>
+                    Rs. 2,000
+                </h4>
+
+                <div class="product-buttons">
+
+                    <button
+                        onclick="addToCart('Hair Straightener', 2000)">
+                        Add to Cart
+                    </button>
+
+                    <button
+                        onclick="window.location.href='product.html?product=hair'">
+                        View Details
+                    </button>
+
                 </div>
 
-            <!-- Product 3 -->
-            <div class="product-card">
-                <div class="product-image">🎧</div>
-                <h3>Wireless Headphones</h3>
-                <p>Enjoy high-quality wireless sound.</p>
-                <h4>Rs. 2,500</h4>
-                <button onclick="addToCart('Wireless Headphones', 2500)">Add to Cart</button>
-            <button onclick="window.location.href='product.html'">
-    View Details
-</button>
             </div>
+
+
+            <!-- Product 2 -->
+
+            <div class="product-card">
+
+                <img
+                    src="images/smart-watch.png"
+                    alt="Smart Watch"
+                >
+
+                <h3>
+                    Smart Watch
+                </h3>
+
+                <p>
+                    Stylish smart watch with useful features
+                    for everyday activities.
+                </p>
+
+                <h4>
+                    Rs. 3,500
+                </h4>
+
+                <div class="product-buttons">
+
+                    <button
+                        onclick="addToCart('Smart Watch', 3500)">
+                        Add to Cart
+                    </button>
+
+                    <button
+                        onclick="window.location.href='product.html?product=watch'">
+                        View Details
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 3 -->
+
+            <div class="product-card">
+
+                <img
+                    src="images/running-shoes.png"
+                    alt="Running Shoes"
+                >
+
+                <h3>
+                    Running Shoes
+                </h3>
+
+                <p>
+                    Comfortable and lightweight running shoes
+                    for daily activities and exercise.
+                </p>
+
+                <h4>
+                    Rs. 4,000
+                </h4>
+
+                <div class="product-buttons">
+
+                    <button
+                        onclick="addToCart('Running Shoes', 4000)">
+                        Add to Cart
+                    </button>
+
+                    <button
+                        onclick="window.location.href='product.html?product=shoes'">
+                        View Details
+                    </button>
+
+                </div>
+
+            </div>
+
 
             <!-- Product 4 -->
+
             <div class="product-card">
-                <div class="product-image">⌚</div>
-                <h3>Smart Watch</h3>
-                <p>Smart watch with useful features.</p>
-                <h4>Rs. 4,000</h4>
-                <button onclick="addToCart('Smart Watch', 4000)">Add to Cart</button>
-            <button onclick="window.location.href='product.html'">
-    View Details
-</button>
+
+                <img
+                    src="images/T-shirt.png"
+                    alt="Sky Blue T-Shirt"
+                >
+
+                <h3>
+                    Sky Blue T-Shirt
+                </h3>
+
+                <p>
+                    Comfortable casual T-shirt with a soft
+                    and stylish design for everyday wear.
+                </p>
+
+                <h4>
+                    Rs. 2,500
+                </h4>
+
+                <div class="product-buttons">
+
+                    <button
+                        onclick="addToCart('Sky Blue T-Shirt', 2500)">
+                        Add to Cart
+                    </button>
+
+                    <button
+                        onclick="window.location.href='product.html?product=tshirt'">
+                        View Details
+                    </button>
+
+                </div>
+
             </div>
 
+
+            <!-- Product 5 -->
+
+            <div class="product-card">
+
+                <img
+                    src="images/phone-case.png"
+                    alt="Floral Phone Case"
+                >
+
+                <h3>
+                    Floral Phone Case
+                </h3>
+
+                <p>
+                    Stylish protective phone case with
+                    a beautiful floral design.
+                </p>
+
+                <h4>
+                    Rs. 1,200
+                </h4>
+
+                <div class="product-buttons">
+
+                    <button
+                        onclick="addToCart('Floral Phone Case', 1200)">
+                        Add to Cart
+                    </button>
+
+                    <button
+                        onclick="window.location.href='product.html?product=case'">
+                        View Details
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 6 -->
+
+            <div class="product-card">
+
+                <img
+                    src="images/wallet.png"
+                    alt="Minimalist Wallet"
+                >
+
+                <h3>
+                    Minimalist Wallet
+                </h3>
+
+                <p>
+                    Compact and elegant wallet with a modern
+                    design for cards and everyday essentials.
+                </p>
+
+                <h4>
+                    Rs. 1,500
+                </h4>
+
+                <div class="product-buttons">
+
+                    <button
+                        onclick="addToCart('Minimalist Wallet', 1500)">
+                        Add to Cart
+                    </button>
+
+                    <button
+                        onclick="window.location.href='product.html?product=wallet'">
+                        View Details
+                    </button>
+
+                </div>
+
+            </div>
+
+
         </div>
+
     </section>
 
-<section id="about">
-    <h2>About Us</h2>
-    <p>Welcome to E-Shop. We provide quality products at affordable prices.</p>
-    <p>Our goal is to make online shopping easy, simple, and convenient.</p>
-</section>
 
-<section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: eshop@example.com</p>
-    <p>Phone: +92 300 1234567</p>
-</section>
+    <!-- About Section -->
+
+    <section id="about">
+
+        <h2>
+            About Us
+        </h2>
+
+        <p>
+            Welcome to E-Shop. We provide quality products
+            at affordable prices.
+        </p>
+
+        <p>
+            Our goal is to make online shopping easy,
+            simple, and convenient.
+        </p>
+
+    </section>
+
+
+    <!-- Contact Section -->
+
+    <section id="contact">
+
+        <h2>
+            Contact Us
+        </h2>
+
+        <p>
+            Email: eshop@example.com
+        </p>
+
+        <p>
+            Phone: +92 300 1234567
+        </p>
+
+    </section>
+
 
     <!-- Footer -->
+
     <footer>
-        <p>© 2026 E-Shop. All Rights Reserved.</p>
+
+        <p>
+            © 2026 E-Shop. All Rights Reserved.
+        </p>
+
     </footer>
+
 
     <script src="script.js"></script>
 
 </body>
+
 </html>

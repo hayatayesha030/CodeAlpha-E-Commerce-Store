@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
+
         .product-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -40,12 +41,15 @@
         }
 
         @media (max-width: 900px) {
+
             .product-container {
                 grid-template-columns: repeat(2, 1fr);
             }
+
         }
 
         @media (max-width: 600px) {
+
             .product-container {
                 grid-template-columns: 1fr;
             }
@@ -58,7 +62,9 @@
                 font-size: 13px;
                 padding: 10px 5px;
             }
+
         }
+
     </style>
 
 </head>
@@ -74,14 +80,28 @@
         </div>
 
         <nav>
+
             <a href="#">Home</a>
-            <a href="#products">Products</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+
+            <a href="#products">
+                Products
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
         </nav>
 
         <button onclick="showCart()">
-            🛒 Cart <span id="cart-count">0</span>
+
+            🛒 Cart
+            <span id="cart-count">0</span>
+
         </button>
 
     </header>
@@ -122,7 +142,7 @@
             <div class="product-card">
 
                 <img
-                    src="images/hair-straightener.png"
+                    src="image/hair-straightner.png"
                     alt="Hair Straightener"
                 >
 
@@ -142,12 +162,14 @@
                 <div class="product-buttons">
 
                     <button
-                        onclick="addToCart('Hair Straightener', 2000)">
+                        onclick="addToCart('Hair Straightener', 2000)"
+                    >
                         Add to Cart
                     </button>
 
                     <button
-                        onclick="window.location.href='product.html?product=hair'">
+                        onclick="window.location.href='product.html?product=hair'"
+                    >
                         View Details
                     </button>
 
@@ -161,7 +183,7 @@
             <div class="product-card">
 
                 <img
-                    src="images/smart-watch.png"
+                    src="image/smart-watch.png"
                     alt="Smart Watch"
                 >
 
@@ -181,12 +203,14 @@
                 <div class="product-buttons">
 
                     <button
-                        onclick="addToCart('Smart Watch', 3500)">
+                        onclick="addToCart('Smart Watch', 3500)"
+                    >
                         Add to Cart
                     </button>
 
                     <button
-                        onclick="window.location.href='product.html?product=watch'">
+                        onclick="window.location.href='product.html?product=watch'"
+                    >
                         View Details
                     </button>
 
@@ -200,7 +224,7 @@
             <div class="product-card">
 
                 <img
-                    src="images/running-shoes.png"
+                    src="image/running-shoes.png"
                     alt="Running Shoes"
                 >
 
@@ -220,12 +244,14 @@
                 <div class="product-buttons">
 
                     <button
-                        onclick="addToCart('Running Shoes', 4000)">
+                        onclick="addToCart('Running Shoes', 4000)"
+                    >
                         Add to Cart
                     </button>
 
                     <button
-                        onclick="window.location.href='product.html?product=shoes'">
+                        onclick="window.location.href='product.html?product=shoes'"
+                    >
                         View Details
                     </button>
 
@@ -239,7 +265,7 @@
             <div class="product-card">
 
                 <img
-                    src="images/T-shirt.png"
+                    src="image/T-shirt.png"
                     alt="Sky Blue T-Shirt"
                 >
 
@@ -259,12 +285,14 @@
                 <div class="product-buttons">
 
                     <button
-                        onclick="addToCart('Sky Blue T-Shirt', 2500)">
+                        onclick="addToCart('Sky Blue T-Shirt', 2500)"
+                    >
                         Add to Cart
                     </button>
 
                     <button
-                        onclick="window.location.href='product.html?product=tshirt'">
+                        onclick="window.location.href='product.html?product=tshirt'"
+                    >
                         View Details
                     </button>
 
@@ -278,7 +306,7 @@
             <div class="product-card">
 
                 <img
-                    src="images/phone-case.png"
+                    src="image/phone-case.png"
                     alt="Floral Phone Case"
                 >
 
@@ -298,12 +326,14 @@
                 <div class="product-buttons">
 
                     <button
-                        onclick="addToCart('Floral Phone Case', 1200)">
+                        onclick="addToCart('Floral Phone Case', 1200)"
+                    >
                         Add to Cart
                     </button>
 
                     <button
-                        onclick="window.location.href='product.html?product=case'">
+                        onclick="window.location.href='product.html?product=case'"
+                    >
                         View Details
                     </button>
 
@@ -317,7 +347,7 @@
             <div class="product-card">
 
                 <img
-                    src="images/wallet.png"
+                    src="image/wallet.png"
                     alt="Minimalist Wallet"
                 >
 
@@ -337,78 +367,12 @@
                 <div class="product-buttons">
 
                     <button
-                        onclick="addToCart('Minimalist Wallet', 1500)">
+                        onclick="addToCart('Minimalist Wallet', 1500)"
+                    >
                         Add to Cart
                     </button>
 
                     <button
-                        onclick="window.location.href='product.html?product=wallet'">
-                        View Details
-                    </button>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-    <!-- About Section -->
-
-    <section id="about">
-
-        <h2>
-            About Us
-        </h2>
-
-        <p>
-            Welcome to E-Shop. We provide quality products
-            at affordable prices.
-        </p>
-
-        <p>
-            Our goal is to make online shopping easy,
-            simple, and convenient.
-        </p>
-
-    </section>
-
-
-    <!-- Contact Section -->
-
-    <section id="contact">
-
-        <h2>
-            Contact Us
-        </h2>
-
-        <p>
-            Email: eshop@example.com
-        </p>
-
-        <p>
-            Phone: +92 300 1234567
-        </p>
-
-    </section>
-
-
-    <!-- Footer -->
-
-    <footer>
-
-        <p>
-            © 2026 E-Shop. All Rights Reserved.
-        </p>
-
-    </footer>
-
-
-    <script src="script.js"></script>
-
-</body>
-
-</html>
+                        onclick="window.location.href='product.html?product=wallet'"
+                    >
+                        View

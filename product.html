@@ -1,10 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details</title>
+
+    <title>Product Details - E-Shop</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #4b4bc4;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .product-details {
+            max-width: 900px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .product-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .product-image img {
+            width: 100%;
+            max-width: 350px;
+            height: 350px;
+            object-fit: contain;
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .product-info h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .product-info p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .product-info h3 {
+            font-size: 25px;
+            margin: 20px 0;
+        }
+
+        .product-info button {
+            background-color: #4b4bc4;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        .product-info button:hover {
+            background-color: #3333a3;
+        }
+
+        @media (max-width: 700px) {
+
+            .product-details {
+                flex-direction: column;
+                margin: 20px;
+                padding: 25px;
+            }
+
+            .product-image img {
+                height: 250px;
+            }
+
+            .product-info {
+                text-align: center;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
@@ -13,35 +113,53 @@
         <h1>Product Details</h1>
     </header>
 
+
     <section class="product-details">
 
+        <!-- Product Image -->
         <div class="product-image">
-            🛍️
+
+            <img src="images/tshirt.png"
+                 alt="Sky Blue T-Shirt">
+
         </div>
 
+
+        <!-- Product Information -->
         <div class="product-info">
-            <h2>Classic T-Shirt</h2>
+
+            <h2>Sky Blue T-Shirt</h2>
 
             <p>
-                Comfortable cotton T-shirt for everyday use.
+                This comfortable Sky Blue T-Shirt is perfect for
+                everyday wear. It is made with soft and comfortable
+                fabric and has a stylish casual design.
             </p>
 
-            <h3>Rs. 1,500</h3>
+            <p>
+                Perfect for casual outings, university, shopping,
+                and daily activities.
+            </p>
 
-            <button onclick="addToCart('Classic T-Shirt', 1500)">
+            <h3>Rs. 2,000</h3>
+
+
+            <button onclick="addToCart('Sky Blue T-Shirt', 2000)">
                 Add to Cart
             </button>
 
-            <br><br>
 
             <button onclick="window.location.href='index.html'">
-    Back to Products
-</button>
+                Back to Products
+            </button>
+
         </div>
 
     </section>
 
+
     <script src="script.js"></script>
 
 </body>
+
 </html>

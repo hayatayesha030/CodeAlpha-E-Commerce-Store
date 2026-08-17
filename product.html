@@ -7,37 +7,61 @@
 
     <title>Product Details - E-Shop</title>
 
-    <link rel="stylesheet" href="style.css">
-
     <style>
-        body {
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
+        }
+
+        body {
             font-family: Arial, sans-serif;
             background-color: #f5f5f5;
+            color: #333;
         }
 
+        /* Navbar */
         header {
-            background-color: #4b4bc4;
+            background: linear-gradient(90deg, #4b4bb7, #5d5dcc);
             color: white;
-            padding: 20px;
-            text-align: center;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        header h1 {
-            margin: 0;
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
         }
 
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Product Details */
         .product-details {
-            max-width: 900px;
-            margin: 50px auto;
-            background-color: white;
-            padding: 40px;
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 30px;
+            background: white;
             border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
 
             display: flex;
-            align-items: center;
             gap: 50px;
+            align-items: center;
         }
 
         .product-image {
@@ -47,8 +71,8 @@
 
         .product-image img {
             width: 100%;
-            max-width: 350px;
-            height: 350px;
+            max-width: 450px;
+            height: 400px;
             object-fit: contain;
         }
 
@@ -56,71 +80,119 @@
             flex: 1;
         }
 
-        .product-info h2 {
-            font-size: 32px;
-            margin-bottom: 15px;
+        .product-info h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
         }
 
-        .product-info p {
+        .price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #4b4bb7;
+            margin-bottom: 25px;
+        }
+
+        .description {
             font-size: 18px;
-            line-height: 1.6;
+            line-height: 1.7;
             color: #555;
+            margin-bottom: 30px;
         }
 
-        .product-info h3 {
-            font-size: 25px;
-            margin: 20px 0;
+        .buttons {
+            display: flex;
+            gap: 15px;
         }
 
-        .product-info button {
-            background-color: #4b4bc4;
-            color: white;
+        .buttons button {
             border: none;
-            padding: 12px 20px;
-            border-radius: 6px;
-            cursor: pointer;
+            padding: 13px 25px;
+            border-radius: 7px;
             font-size: 16px;
-            margin-right: 10px;
+            cursor: pointer;
         }
 
-        .product-info button:hover {
-            background-color: #3333a3;
+        .add-cart {
+            background-color: #4b4bb7;
+            color: white;
         }
 
+        .back-button {
+            background-color: #ddd;
+            color: #333;
+        }
+
+        .buttons button:hover {
+            opacity: 0.85;
+        }
+
+        /* Mobile */
         @media (max-width: 700px) {
 
-            .product-details {
+            header {
                 flex-direction: column;
-                margin: 20px;
-                padding: 25px;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            .product-details {
+                margin: 30px 15px;
+                padding: 20px;
+                flex-direction: column;
+                gap: 20px;
             }
 
             .product-image img {
-                height: 250px;
+                height: 280px;
             }
 
             .product-info {
                 text-align: center;
             }
+
+            .product-info h1 {
+                font-size: 28px;
+            }
+
+            .buttons {
+                justify-content: center;
+                flex-direction: column;
+            }
         }
     </style>
-
 </head>
 
 <body>
 
+    <!-- Navbar -->
     <header>
-        <h1>Product Details</h1>
+
+        <div class="logo">
+            E-Shop
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#products">Products</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+
     </header>
 
 
-    <section class="product-details">
+    <!-- Product Details -->
+    <div class="product-details">
 
         <!-- Product Image -->
         <div class="product-image">
 
-            <img src="images/tshirt.png"
-                 alt="Sky Blue T-Shirt">
+            <img id="product-image"
+                 src=""
+                 alt="Product">
 
         </div>
 
@@ -128,37 +200,149 @@
         <!-- Product Information -->
         <div class="product-info">
 
-            <h2>Sky Blue T-Shirt</h2>
+            <h1 id="product-name">
+                Product Name
+            </h1>
 
-            <p>
-                This comfortable Sky Blue T-Shirt is perfect for
-                everyday wear. It is made with soft and comfortable
-                fabric and has a stylish casual design.
+            <div class="price" id="product-price">
+                Rs. 0
+            </div>
+
+            <p class="description" id="product-description">
+                Product description
             </p>
 
-            <p>
-                Perfect for casual outings, university, shopping,
-                and daily activities.
-            </p>
+            <div class="buttons">
 
-            <h3>Rs. 2,000</h3>
+                <button class="add-cart"
+                        id="add-cart-button">
+                    Add to Cart
+                </button>
 
+                <button class="back-button"
+                        onclick="window.location.href='index.html#products'">
+                    Back to Products
+                </button>
 
-            <button onclick="addToCart('Sky Blue T-Shirt', 2000)">
-                Add to Cart
-            </button>
-
-
-            <button onclick="window.location.href='index.html'">
-                Back to Products
-            </button>
+            </div>
 
         </div>
 
-    </section>
+    </div>
 
 
     <script src="script.js"></script>
+
+    <script>
+
+        const products = {
+
+            hair: {
+                name: "Hair Straightener",
+                image: "images/hair-straightner.png",
+                price: 5000,
+                description:
+                    "Fast and easy hair straightener with a stylish design. It helps you achieve smooth, straight and beautiful hair quickly. Perfect for everyday styling and easy to use."
+            },
+
+            watch: {
+                name: "Smart Watch",
+                image: "images/smart-watch.png",
+                price: 4000,
+                description:
+                    "Stylish smart watch with useful features for everyday activities. It has a modern design and is a great choice for staying connected while tracking your daily activities."
+            },
+
+            shoes: {
+                name: "Running Shoes",
+                image: "images/running-shoes.png",
+                price: 4000,
+                description:
+                    "Comfortable and lightweight running shoes designed for daily activities and exercise. They provide a stylish look along with comfort for walking, running and everyday use."
+            },
+
+            tshirt: {
+                name: "Sky Blue T-Shirt",
+                image: "images/T-shirt.png",
+                price: 2000,
+                description:
+                    "Comfortable casual sky blue T-shirt with a soft and stylish design. Perfect for everyday wear, casual outings and relaxed activities."
+            },
+
+            case: {
+                name: "Floral Phone Case",
+                image: "images/phone-case.png",
+                price: 1500,
+                description:
+                    "Stylish protective phone case with a beautiful floral design. It provides protection for your phone while giving it an attractive and fashionable look."
+            },
+
+            wallet: {
+                name: "Minimalist Wallet",
+                image: "images/wallet.png",
+                price: 1500,
+                description:
+                    "Compact and elegant wallet with a modern design for cards and everyday essentials. Its simple design makes it convenient for everyday use."
+            }
+
+        };
+
+
+        // Get product name from URL
+        const urlParams = new URLSearchParams(window.location.search);
+
+        const productId = urlParams.get("product");
+
+
+        // Select product
+        const product = products[productId];
+
+
+        if (product) {
+
+            document.getElementById("product-image").src =
+                product.image;
+
+            document.getElementById("product-image").alt =
+                product.name;
+
+            document.getElementById("product-name").textContent =
+                product.name;
+
+            document.getElementById("product-price").textContent =
+                "Rs. " + product.price.toLocaleString();
+
+            document.getElementById("product-description").textContent =
+                product.description;
+
+
+            // Add to Cart
+            document.getElementById("add-cart-button").onclick =
+                function () {
+
+                    addToCart(product.name, product.price);
+
+                };
+
+        } else {
+
+            document.getElementById("product-name").textContent =
+                "Product Not Found";
+
+            document.getElementById("product-description").textContent =
+                "Sorry, the product you are looking for was not found.";
+
+            document.getElementById("product-price").textContent =
+                "";
+
+            document.getElementById("product-image").style.display =
+                "none";
+
+            document.getElementById("add-cart-button").style.display =
+                "none";
+        }
+
+    </script>
 
 </body>
 

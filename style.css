@@ -1,3 +1,7 @@
+/* =========================
+   General Styling
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +14,7 @@ html {
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f3f6ff;
+    background-color: #f5f0ff;
     color: #333;
 }
 
@@ -20,20 +24,19 @@ body {
 ========================= */
 
 header {
-    background-color: #4b4bb7;
+    background-color: #6c4ab6;
     color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 18px 50px;
+    padding: 15px 50px;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-.logo {
+header h1 {
     font-size: 28px;
-    font-weight: bold;
 }
 
 nav {
@@ -49,17 +52,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #dcdcff;
-}
-
-header button {
-    background-color: white;
-    color: #4b4bb7;
-    border: none;
-    padding: 10px 18px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
+    color: #ddd;
 }
 
 
@@ -70,12 +63,11 @@ header button {
 .hero {
     text-align: center;
     padding: 80px 20px;
-    background: linear-gradient(135deg, #e7e7ff, #ffffff);
+    background-color: #eee6ff;
 }
 
 .hero h1 {
     font-size: 42px;
-    color: #4b4bb7;
     margin-bottom: 15px;
 }
 
@@ -84,18 +76,19 @@ header button {
     margin-bottom: 25px;
 }
 
-.hero button {
-    background-color: #4b4bb7;
+.hero button,
+button {
+    background-color: #6c4ab6;
     color: white;
     border: none;
-    padding: 13px 28px;
-    border-radius: 6px;
+    padding: 12px 25px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
 }
 
-.hero button:hover {
-    background-color: #38389b;
+.hero button:hover,
+button:hover {
+    background-color: #55379a;
 }
 
 
@@ -110,41 +103,29 @@ header button {
 
 #products h2 {
     font-size: 32px;
-    color: #4b4bb7;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 }
-
-
-/* 3 Products Per Row */
 
 .product-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    gap: 20px;
     max-width: 1100px;
     margin: auto;
 }
 
-
-/* Product Card */
-
 .product-card {
     background-color: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.2s;
-}
-
-.product-card:hover {
-    transform: translateY(-5px);
 }
 
 .product-card img {
     width: 100%;
-    max-width: 180px;
-    height: 180px;
+    max-width: 150px;
+    height: 150px;
     object-fit: contain;
     margin-bottom: 15px;
 }
@@ -152,43 +133,17 @@ header button {
 .product-card h3 {
     font-size: 20px;
     margin-bottom: 10px;
-    color: #333;
 }
 
 .product-card p {
     color: #666;
-    margin-bottom: 12px;
-    line-height: 1.5;
+    margin-bottom: 10px;
 }
 
-.product-card h4 {
+.product-card .price {
     font-size: 18px;
-    color: #4b4bb7;
+    font-weight: bold;
     margin: 10px 0;
-}
-
-
-/* Product Buttons */
-
-.product-buttons {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin-top: 15px;
-}
-
-.product-buttons button {
-    flex: 1;
-    padding: 10px;
-    border: none;
-    border-radius: 6px;
-    background-color: #4b4bb7;
-    color: white;
-    cursor: pointer;
-}
-
-.product-buttons button:hover {
-    background-color: #38389b;
 }
 
 
@@ -197,14 +152,13 @@ header button {
 ========================= */
 
 #about {
-    background-color: white;
+    background-color: #eee6ff;
     padding: 60px 20px;
     text-align: center;
 }
 
 #about h2 {
     font-size: 32px;
-    color: #4b4bb7;
     margin-bottom: 20px;
 }
 
@@ -221,14 +175,13 @@ header button {
 ========================= */
 
 #contact {
-    background-color: #f3f6ff;
+    background-color: #f5f0ff;
     padding: 60px 20px;
     text-align: center;
 }
 
 #contact h2 {
     font-size: 32px;
-    color: #4b4bb7;
     margin-bottom: 20px;
 }
 
@@ -243,7 +196,7 @@ header button {
 ========================= */
 
 footer {
-    background-color: #4b4bb7;
+    background-color: #6c4ab6;
     color: white;
     text-align: center;
     padding: 20px;
@@ -255,7 +208,7 @@ footer p {
 
 
 /* =========================
-   Tablet
+   Tablet Responsive
 ========================= */
 
 @media (max-width: 900px) {
@@ -275,7 +228,7 @@ footer p {
 
 
 /* =========================
-   Mobile
+   Mobile Responsive
 ========================= */
 
 @media (max-width: 600px) {
@@ -284,6 +237,10 @@ footer p {
         flex-direction: column;
         padding: 15px 10px;
         gap: 12px;
+    }
+
+    header h1 {
+        font-size: 24px;
     }
 
     nav {
@@ -343,5 +300,37 @@ footer p {
 
     footer {
         font-size: 14px;
+    }
+}
+
+
+/* =========================
+   Small Mobile
+========================= */
+
+@media (max-width: 400px) {
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    nav {
+        gap: 8px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .product-card {
+        padding: 15px;
+    }
+
+    .product-card img {
+        height: 120px;
     }
 }

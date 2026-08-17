@@ -1,9 +1,12 @@
 let cart = [];
 
 function addToCart(name, price) {
-    cart.push({ name: name, price: price });
+    cart.push({
+        name: name,
+        price: price
+    });
 
-    let cartCount = document.getElementById("cart-count");
+    const cartCount = document.getElementById("cart-count");
 
     if (cartCount) {
         cartCount.textContent = cart.length;
@@ -22,21 +25,28 @@ function showCart() {
     let total = 0;
 
     cart.forEach(function(item, index) {
-        message += (index + 1) + ". " + item.name + " - Rs. " + item.price + "\n";
+        message +=
+            (index + 1) +
+            ". " +
+            item.name +
+            " - Rs. " +
+            item.price +
+            "\n";
+
         total += item.price;
     });
 
     message += "\nTotal Amount: Rs. " + total;
     message += "\n\nDo you want to place this order?";
 
-    let confirmOrder = confirm(message);
+    const confirmOrder = confirm(message);
 
     if (confirmOrder) {
         alert("Order placed successfully!\n\nTotal: Rs. " + total);
 
         cart = [];
 
-        let cartCount = document.getElementById("cart-count");
+        const cartCount = document.getElementById("cart-count");
 
         if (cartCount) {
             cartCount.textContent = "0";
@@ -45,19 +55,23 @@ function showCart() {
 }
 
 function scrollToProducts() {
-    document.getElementById("products").scrollIntoView({
-        behavior: "smooth"
-    });
+    const products = document.getElementById("products");
+
+    if (products) {
+        products.scrollIntoView({
+            behavior: "smooth"
+        });
+    }
 }
 
 function loginUser(event) {
     event.preventDefault();
 
-    let email = document.getElementById("loginEmail").value;
-    let password = document.getElementById("loginPassword").value;
+    const email = document.getElementById("loginEmail").value;
+    const password = document.getElementById("loginPassword").value;
 
-    let savedEmail = localStorage.getItem("userEmail");
-    let savedPassword = localStorage.getItem("userPassword");
+    const savedEmail = localStorage.getItem("userEmail");
+    const savedPassword = localStorage.getItem("userPassword");
 
     if (email === savedEmail && password === savedPassword) {
         alert("Login successful!");

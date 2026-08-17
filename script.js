@@ -34,23 +34,22 @@ function showCart() {
     if (confirmOrder) {
         alert("Order placed successfully!\n\nTotal: Rs. " + total);
 
-        // Empty the cart after placing order
         cart = [];
 
-        // Update cart count
         let cartCount = document.getElementById("cart-count");
 
         if (cartCount) {
             cartCount.textContent = "0";
         }
     }
-}S
+}
 
 function scrollToProducts() {
     document.getElementById("products").scrollIntoView({
         behavior: "smooth"
     });
 }
+
 function loginUser(event) {
     event.preventDefault();
 
@@ -62,7 +61,6 @@ function loginUser(event) {
 
     if (email === savedEmail && password === savedPassword) {
         alert("Login successful!");
-
         window.location.href = "index.html";
     } else {
         alert("Invalid email or password!");
